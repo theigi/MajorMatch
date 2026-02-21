@@ -9,16 +9,14 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
-      - key: FRONTEND_URL
-        value: https://majormatch.onrender.com # Change this to your actual frontend URL later
 
   # 2. Frontend Static Site (React/Vite)
-  - type: web
+  - type: static
     name: majormatch-frontend
-    runtime: static
+    runtime: node
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://majormatch-backend.onrender.com # Change this to your actual backend URL later
+        value: https://majormatch-backend.onrender.com
