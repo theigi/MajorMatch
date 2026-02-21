@@ -1,0 +1,20 @@
+MajorMatch/
+├── backend/
+│   ├── app/
+│   │   ├── api/             # API routes (FastAPI)
+│   │   ├── models/          # Pydantic data schemas
+│   │   ├── services/        # ML Logic & PDF Generation
+│   │   └── main.py          # Entry point & CORS setup
+│   ├── data/                # student_data.csv
+│   ├── ml_models/           # Serialized .pkl files
+│   ├── scripts/             # train_model.py
+│   └── requirements.txt     # Python dependencies
+├── frontend/
+│   ├── src/
+│   │   ├── services/        # Modular API fetch logic
+│   │   ├── App.jsx          # UI & State Logic
+│   │   └── App.css          # Glassmorphism & Bento styles
+│   ├── package.json         # Node dependencies
+│   └── vite.config.js       # Vite configuration
+├── .gitignore               # Multi-layer git exclusion
+└── README.md

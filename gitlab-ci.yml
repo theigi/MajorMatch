@@ -1,0 +1,32 @@
+stages:
+  - test
+
+# Define the backend test job
+backend-tests:
+  stage: test
+  image: python:3.10
+  variables:
+    # Ensures Python doesn't buffer output and shows logs in real-time
+    PYTHONUNBUFFERED: "1"
+  before_script:
+    - cd backend
+    - pip install -r requirements.txt
+    - pip install pytest httpx
+    # We must train the model in the CI environment so the tests have .pkl files to load
+    - python scripts/train_model.py
+  script:
+    - pytest tests/
+  artifacts:
+    when: always
+    paths:
+      - backend/ml_models/
+    expire_in: 1 week
+
+# Optional: Add a placeholder for frontend linting/testing
+frontend-lint:
+  stage: test
+  image: node:22
+  script:
+    - cd frontend
+    - npm install
+    - npm run lint # Only works if you have a lint script in package.json
