@@ -11,9 +11,9 @@ services:
         value: 3.10.0
 
   # 2. Frontend Static Site (React/Vite)
-  - type: static
+  - type: web
     name: majormatch-frontend
-    runtime: node
+    runtime: static  # Correct runtime for static sites
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
