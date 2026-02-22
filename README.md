@@ -1,69 +1,130 @@
-# MajorMatch: AI-Driven Academic Guidance
+# MajorMatch – AI-Powered Academic Guidance System
+
+🎯 **Purpose**  
+MajorMatch is an AI-driven system that recommends suitable university majors based on a student's academic performance and interests.
+
+🚀 **Why this project matters**
+- Demonstrates end-to-end AI system design
+- Combines Machine Learning, Backend APIs, and Modern Frontend
+- Fully deployed with CI/CD on Render using GitLab
+
+🔗 **Live Demo**
+- 🌐 Frontend Dashboard: https://majormatch-frontend.onrender.com/
+- 🛠️ API Documentation: https://majormatch-backend.onrender.com/docs
+
+🧠 **Key Skills Demonstrated**
+- Machine Learning (Scikit-learn, Random Forest)
+- Backend Development (FastAPI, REST APIs)
+- Frontend Development (React, Vite, modern UI)
+- Deployment & CI/CD (GitLab + Render)
+
+---
 
 ## Project Goal
-MajorMatch is an end-to-end recommendation engine that analyzes student performance and interests to suggest the most suitable university major. It features a high-performance FastAPI backend, a machine learning brain powered by Scikit-learn, and a modern React frontend with Glassmorphism styling.
+MajorMatch helps students make informed academic decisions by analyzing academic scores and personal interests using a data-driven machine learning approach.
+
+---
+
+## Key Features
+- **AI Predictions**: Random Forest Classifier for major recommendations
+- **Modern UI**: Dark-themed Glassmorphism React interface
+- **Decoupled Architecture**: Independent backend and frontend
+- **Production Deployment**: Automated CI/CD with GitLab and Render
+
+---
+
+## Architecture Overview
+- **Frontend**: React dashboard for user interaction
+- **Backend**: FastAPI service exposing prediction APIs
+- **ML Layer**: Trained Scikit-learn model loaded at runtime
+- **Deployment**: Render with GitLab-based CI/CD
+
+---
 
 ## Project Structure
-The project is decoupled into a stateful AI backend and a modern React dashboard.
-
+```text
 MajorMatch/
 ├── backend/
 │   ├── app/
-│   │   ├── api/             # API routes (FastAPI)
-│   │   ├── models/          # Pydantic data schemas
-│   │   ├── services/        # ML Logic & PDF Generation
-│   │   └── main.py          # Entry point & CORS setup
+│   │   ├── api/             # FastAPI routes
+│   │   ├── models/          # Pydantic schemas
+│   │   ├── services/        # ML logic & PDF generation
+│   │   └── main.py          # App entry & CORS setup
 │   ├── data/                # student_data.csv
-│   ├── ml_models/           # Serialized .pkl files
-│   ├── scripts/             # train_model.py
-│   └── requirements.txt     # Python dependencies
+│   ├── ml_models/           # Serialized ML models (.pkl)
+│   ├── scripts/             # Model training scripts
+│   └── requirements.txt
 ├── frontend/
 │   ├── src/
-│   │   ├── services/        # Modular API fetch logic
-│   │   ├── App.jsx          # UI & State Logic
-│   │   └── App.css          # Glassmorphism & Bento styles
-│   ├── package.json         # Node dependencies
-│   └── vite.config.js       # Vite configuration
-├── .gitignore               # Multi-layer git exclusion
+│   │   ├── services/        # API abstraction layer
+│   │   ├── App.jsx          # UI logic
+│   │   └── App.css          # Glassmorphism styles
+│   ├── package.json
+│   └── vite.config.js
+├── .gitignore
 └── README.md
+```
 
-## Tools & Technologies
+---
 
-Frontend: React 19, Vite 7, CSS3 (Bento-box Layout).
+## Tech Stack
 
-Backend: Python 3.x, FastAPI, Uvicorn, ReportLab (PDF).
+**Frontend**
+- React 19
+- Vite 7
+- CSS3 (Glassmorphism / Bento layout)
 
-Machine Learning: Scikit-learn (Random Forest), Pandas.
+**Backend**
+- Python 3.x
+- FastAPI
+- Uvicorn
+- ReportLab (PDF generation)
 
-Environment: Node.js 22+, Python Virtual Environments.
+**Machine Learning**
+- Scikit-learn (Random Forest)
+- Pandas
 
+**Environment**
+- Node.js 22+
+- Python Virtual Environments
 
-## Features
+---
 
-* **AI Predictions**: Uses a Random Forest Classifier to analyze student profiles.
-* **Modern UI**: Sleek, dark-themed Glassmorphism interface built with React.
-* **Automated CI/CD**: Integrated with GitLab CI and Render for seamless deployment.
+## Running the Project Locally
 
-## Running the Project
-
-# Backend
+### Backend
+```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Step 1: Train the model
+# Train the model
 python scripts/train_model.py
 
-# Step 2: Start the API
+# Start API server
 uvicorn app.main:app --reload
+```
 
-# Frontend
+### Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
+
+---
 
 ## Model Insights
-Predictive Power: Math and Physics scores are prioritized for STEM track recommendations.
+- **Predictive Focus**: Math and Physics scores are weighted heavily for STEM-related recommendations.
+- **Encoding Strategy**: Categorical interests are transformed using LabelEncoders to ensure ML compatibility.
 
-Encoding: Categorical interests are transformed via LabelEncoders to ensure compatibility with the ML model
+---
+
+## Evaluation Notes
+This project highlights:
+- Full-stack AI application development
+- Clean separation of concerns
+- Production deployment experience
+- Practical application of machine learning models
+# MajorMatch
