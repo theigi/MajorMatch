@@ -9,7 +9,7 @@ MajorMatch is an AI-driven system that recommends suitable university majors bas
 - Fully deployed with CI/CD on Render using GitLab
 
 🔗 **Live Demo**
-- 🎬 Watch Demo: https://www.loom.com/share/9bcbcb31754e441d9b892fb752f4623c)
+- 🎬 Watch Demo: https://www.loom.com/share/9bcbcb31754e441d9b892fb752f4623c
 - 🌐 Frontend Dashboard: https://majormatch-frontend.onrender.com/
 - 🛠️ API Documentation: https://majormatch-backend.onrender.com/docs
 
